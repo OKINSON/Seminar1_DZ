@@ -2,10 +2,8 @@
 void InputArray(double[] array)
 {
   for (int i = 0; i < array.Length; i++)
-    array[i] = Math.Round(new Random().NextDouble() * (10 - 1) + 1, 2); // [1, 10]
-    // * (end - begin) + begin
-}
-
+    array[i] = Math.Round(new Random().NextDouble() * (10 - 1) + 1, 1); 
+  }
 
 string DiffMaxAndMin(double[] array)
 {
@@ -20,11 +18,10 @@ string DiffMaxAndMin(double[] array)
   return $"{maxArray} - {minArray} = {maxArray - minArray}";
 }
 
-
 Console.Clear();
 Console.Write("Введите кол-во элементов: ");
 int n = Convert.ToInt32(Console.ReadLine());
 double[] array = new double[n];
 InputArray(array);
 Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
-Console.WriteLine($"Результат: {DiffMaxAndMin(array)}");
+Console.WriteLine($"Результат: {DiffMaxAndMin(array) , 1}"); // единица в конце округляет дробность до 1
