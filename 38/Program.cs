@@ -17,8 +17,6 @@ string DiffMaxAndMin(double[] array)
   }
   return $"{maxArray} - {minArray} = {maxArray - minArray}";
 }
-
-Console.Clear();
 Console.Write("Введите кол-во элементов: ");
 int n = Convert.ToInt32(Console.ReadLine());
 double[] array = new double[n];
